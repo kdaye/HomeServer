@@ -2,8 +2,8 @@
 FROM alpine
 MAINTAINER k <k@kdaye.com>
 
-ARG SSR_VER=3.0.6
-ARG SSR_URL=https://github.com/shadowsocksr/shadowsocksr-libev/archive/2.4.1.tar.gz
+ARG SSR_VER=2.4.1
+ARG SSR_URL=https://github.com/shadowsocksr/shadowsocksr-libev/archive/$SSR_VER.tar.gz
 
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388

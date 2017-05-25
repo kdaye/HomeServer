@@ -34,7 +34,7 @@ RUN set -ex && \
     cd .. && \
 
     runDeps="$( \
-        scanelf --needed --nobanner /usr/bin/ssr-* \
+        scanelf --needed --nobanner /usr/bin/ss-* \
             | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
             | xargs -r apk info --installed \
             | sort -u \
@@ -47,7 +47,7 @@ USER nobody
 
 EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
 
-CMD ssr-server -s $SERVER_ADDR \
+CMD ss-server -s $SERVER_ADDR \
               -p $SERVER_PORT \
               -k ${PASSWORD:-$(hostname)} \
               -m $METHOD \

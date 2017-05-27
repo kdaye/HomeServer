@@ -24,7 +24,6 @@ RUN set -ex \
                                 linux-headers \
                                 udns-dev \
                                 libsodium-dev \
-                                mbedtls-dev \
                                 pcre-dev \
                                 tar \
                                 zlib-dev \

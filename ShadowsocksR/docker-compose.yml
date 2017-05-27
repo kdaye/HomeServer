@@ -12,4 +12,3 @@ services:
                 - "5353:53/udp"
         volumes:
                 - ./config.json:/etc/config.json
-

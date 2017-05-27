@@ -7,6 +7,7 @@ ARG SSR_URL=https://github.com/shadowsocksr/shadowsocksr-libev/archive/$SSR_VER.
 
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388
+ENV LOCAL_HOST 0.0.0.0
 ENV LOCAL_PORT 1080
 ENV PASSWORD=
 ENV METHOD      aes-256-cfb

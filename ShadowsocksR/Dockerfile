@@ -39,5 +39,10 @@ RUN set -ex \
 
 USER nobody
 
-EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
-EXPOSE $LOCAL_PORT/tcp $LOCAL_PORT/udp
+EXPOSE 8388/tcp 8388/udp 1080/tcp 1080/udp 53/udp
+
+ADD config.json /etc/config.json
+RUN nohup ss-server -c /etc/config.json -u &
+RUN nohup ss-local -c /etc/config.json -u &
+RUN nohup ss-tunnel -c /etc/config.json -L "8.8.8.8:53" -u &
+RUN nohup ss-redir -c /etc/config.json &

@@ -2,6 +2,7 @@ version: "2"
 
 services:
      ssr:
+        container_name: ssr
         #image: kdaye/shadowsocksr
         image: registry.cn-hangzhou.aliyuncs.com/kj/shadowsocksr
         ports:

@@ -2,14 +2,14 @@
 all in docker
 
 ## ShadowsocksR
-###作为客户端  
+### 作为客户端  
 参考https://github.com/breakwa11/shadowsocks-rss/wiki/config.json  
-`cd ShadowsocksR`
+`cd ShadowsocksR`  
 `vim config.json`  
 填写上服务器IP和密码。  
 运行
 `docker-compose up -d`  
-###作为服务器  
+### 作为服务器  
 `cd ShadowsocksR`  
 `vim config.json`    
 填写密码。  

@@ -28,6 +28,7 @@ RUN set -ex \
                                 pcre-dev \
                                 tar \
                                 zlib-dev \
+                                openssl-dev \
                                 udns-dev && \
     cd /tmp && \
     curl -sSL $SSR_URL | tar xz --strip 1 && \

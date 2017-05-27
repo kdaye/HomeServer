@@ -27,6 +27,7 @@ RUN set -ex \
                                 mbedtls-dev \
                                 pcre-dev \
                                 tar \
+                                zlib-dev \
                                 udns-dev && \
     cd /tmp && \
     curl -sSL $SSR_URL | tar xz --strip 1 && \

@@ -5,8 +5,6 @@
 	"timeout":300,
 	"udp_timeout":"60",
 	"method":"aes-256-cfb",
-	"local_address":"0.0.0.0",
-	"local_port":"1080",
 	"protocol":"auth_sha1_v4",
 	"obfs":"tls1.2_ticket_auth",
 	"fast_open":"true"

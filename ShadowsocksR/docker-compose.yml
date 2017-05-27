@@ -1,12 +1,13 @@
 version: "2"
 
 services:
-        image: kdaye/shadowsocksr
-        #image: registry.cn-hangzhou.aliyuncs.com/kj/shadowsocksr
+     ssr:
+        #image: kdaye/shadowsocksr
+        image: registry.cn-hangzhou.aliyuncs.com/kj/shadowsocksr
         ports:
                 # - "8388:8388/tcp"
                 # - "8388:8388/udp"
                 - "1080:1080/tcp"
                 - "1080:1080/udp"
-        command: ss-local -s you-server-host-ip -p SERVER_PORT -k yourpassword -m $METHOD -l $LOCAL_PORT -u -b $LOCAL_ADDR
+        command: ss-local -s your_server_ip -p 8388 -k password -m aes-256-cfb -l 1080 -u -b 0.0.0.0
 

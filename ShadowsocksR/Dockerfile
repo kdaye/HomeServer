@@ -38,7 +38,7 @@ RUN set -ex \
     rm -rf /tmp/*
 
 
-EXPOSE 8388/tcp 8388/udp 1080/tcp 1080/udp 53/udp
+EXPOSE 8388/tcp 8388/udp 1080/tcp 1080/udp 1081/tcp 53/udp
 
 ADD config.json /etc/config.json
 ADD start.sh start.sh

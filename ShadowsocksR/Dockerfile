@@ -43,4 +43,4 @@ EXPOSE 8388/tcp 8388/udp 1080/tcp 1080/udp 53/udp
 ADD config.json /etc/config.json
 ADD start.sh start.sh
 RUN chmod +x start.sh
-CMD ["start.sh"]
+CMD ["/bin/sh","start.sh"]

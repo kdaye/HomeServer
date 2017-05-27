@@ -7,6 +7,7 @@ ARG SSR_URL=https://github.com/shadowsocksr/shadowsocksr-libev/archive/$SSR_VER.
 
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388
+ENV LOCAL_PORT 1080
 ENV PASSWORD=
 ENV METHOD      aes-256-cfb
 ENV TIMEOUT     300
@@ -48,13 +49,4 @@ RUN set -ex \
 USER nobody
 
 EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
-
-CMD ss-server -s $SERVER_ADDR \
-              -p $SERVER_PORT \
-              -k ${PASSWORD:-$(hostname)} \
-              -m $METHOD \
-              -t $TIMEOUT \
-              --fast-open \
-              -d $DNS_ADDR \
-              -d $DNS_ADDR_2 \
--u
+EXPOSE $LOCAL_PORT/tcp $LOCAL_PORT/udp

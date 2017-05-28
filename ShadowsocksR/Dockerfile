@@ -20,7 +20,6 @@ RUN set -ex \
                                 zlib-dev \
 				libcap-dev \
 				xmlto \
-				mbedtls-dev \
                                 openssl-dev \
                                 udns-dev && \
     cd /tmp && \

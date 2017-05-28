@@ -18,6 +18,9 @@ RUN set -ex \
                                 pcre-dev \
                                 tar \
                                 zlib-dev \
+				libcap-dev \
+				xmlto \
+				mbedtls-dev \
                                 openssl-dev \
                                 udns-dev && \
     cd /tmp && \

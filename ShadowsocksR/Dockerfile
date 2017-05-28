@@ -6,6 +6,12 @@ RUN set -ex \
             && if [ $(wget -qO- ipinfo.io/country) == CN ]; then echo "http://mirrors.aliyun.com/alpine/latest-stable/main/" > /etc/apk/repositories ;fi \
             && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 	    && echo "Asia/Shanghai" > /etc/timezone \
+	    && libcrypto1.0 \
+		libev \
+		libsodium \
+		pcre \
+		udns \
+		bash \
 	    && apk add --no-cache --virtual .build-deps \
                                 autoconf \
                                 build-base \

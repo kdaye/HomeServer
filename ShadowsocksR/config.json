@@ -7,5 +7,4 @@
 	"method":"aes-256-cfb",
 	"protocol":"auth_sha1_v4",
 	"obfs":"tls1.2_ticket_auth",
-	"fast_open":"true"
 }

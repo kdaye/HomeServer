@@ -40,4 +40,3 @@ RUN set -ex \
 
 EXPOSE 1080/tcp 1080/udp
 
-CMD [true]

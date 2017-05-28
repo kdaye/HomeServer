@@ -4,7 +4,9 @@ MAINTAINER k <k@kdaye.com>
 
 RUN set -ex \
             && if [ $(wget -qO- ipinfo.io/country) == CN ]; then echo "http://mirrors.aliyun.com/alpine/latest-stable/main/" > /etc/apk/repositories ;fi \
-            && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+            && apk add --no-cache tzdata \
+				ca-certificates \
+	    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 	    && echo "Asia/Shanghai" > /etc/timezone \
 	    && apk add --no-cache --virtual .build-deps \
                                 autoconf \

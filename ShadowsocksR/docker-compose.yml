@@ -6,11 +6,8 @@ services:
         #image: kdaye/shadowsocksr
         image: registry.cn-hangzhou.aliyuncs.com/kj/shadowsocksr
         ports:
-                # - "8388:8388/tcp"
-                # - "8388:8388/udp"
                 - "1080:1080/tcp"
                 - "1080:1080/udp"
                 - "1081:1081/tcp"
-                - "5353:53/udp"
         volumes:
                 - ./config.json:/etc/config.json

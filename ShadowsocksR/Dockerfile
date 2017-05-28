@@ -38,9 +38,6 @@ RUN set -ex \
     rm -rf /tmp/*
 
 
-EXPOSE 1080/tcp 1080/udp 1081/tcp
+EXPOSE 1080/tcp 1080/udp
 
-ADD config.json /etc/config.json
-ADD start.sh start.sh
-RUN chmod +x start.sh
-CMD ["/bin/sh","start.sh"]
+CMD [true]

@@ -7,7 +7,7 @@ RUN set -ex \
             && apk add --no-cache --virtual .build-deps \
                                 autoconf \
                                 build-base \
-                                curl \
+                                git \
                                 libev-dev \
                                 libtool \
                                 linux-headers \

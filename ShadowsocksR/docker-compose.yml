@@ -8,16 +8,17 @@ services:
         ports:
                 - "1080:1080/tcp"
                 - "1080:1080/udp"
-        network_mode: bridge
-        command: ss-redir -s you_ip_server -p 8388 -k passwd -b 0.0.0.0 -l 1080 -m aes-256-cfb -o tls1.2_ticket_auth -O auth_aes128_md5 -u -t 300
+        network_mode: host
+        command: ss-redir -s your_server_ip -p 8388 -k passwd -b 0.0.0.0 -l 1080 -m aes-256-cfb -o tls1.2_ticket_auth -O auth_aes128_md5 -u -t 300
 
+# for Proxifier user
 
      ssr-local:
         container_name: ssr-local
         #image: kdaye/shadowsocksr
         image: registry.cn-hangzhou.aliyuncs.com/kj/shadowsocksr
         ports:
-                - "1081:1080/tcp"
-                - "1081:1080/udp"
+                - "1081:1081/tcp"
+                - "1081:1081/udp"
         network_mode: bridge
-        command: ss-local -s you_ip_server -p 8388 -k passwd -b 0.0.0.0 -l 1080 -m aes-256-cfb -o tls1.2_ticket_auth -O auth_aes128_md5 -u -t 300
+        command: ss-local -s your_server_ip -p 8388 -k passwd -b 0.0.0.0 -l 1081 -m aes-256-cfb -o tls1.2_ticket_auth -O auth_aes128_md5 -u -t 300

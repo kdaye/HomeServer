@@ -2,19 +2,18 @@
 ## ShadowsocksR
 ### 作为客户端  
 参考https://github.com/breakwa11/shadowsocks-rss/wiki/config.json  
-```
-docker run -d --name ssr --restart-always \
-kdaye@shadowsocksr \
-ss-redir -s your_server_ip -p 8388 \
--k passwd -b 0.0.0.0 -l 1080 \
--m aes-256-cfb -o tls1.2_ticket_auth \
--O auth_aes128_md5 -u
-```
-or
+
 ```
 git 
 cd ShadowsocksR
 vim docker-compose.yml
 docker-compose up -d
 ```
- 
+
+### dnsmasq-ipset
+如果需要ipset和gfwlist翻墙，设置iptables!
+```
+ipset -N gfwlist iphash
+iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
+iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
+``` 

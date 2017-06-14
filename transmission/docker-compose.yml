@@ -1,0 +1,19 @@
+version: "2"
+services:
+  bt:
+    image: timhaak/transmission
+    container_name: bt
+    ports:
+      - "45555:45555"
+    volumes:
+      - ./config:/config
+      - /data/public/watch:/watch
+      - /data/public/downloads:/downloads
+      - /data/public/incomplete:/incomplete
+    network_mode: bridge
+    environment:
+      - USERNAME=admin
+      - PASSWORD=password
+      - VIRTUAL_HOST=jia.bt
+      - VIRTUAL_PORT=9091
+
